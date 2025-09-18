@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Paleta de Van Gogh</title>
+<meta name="description" content="Explora un vibrante catálogo de materiales de arte de alta calidad. Desde pinturas y pinceles hasta lienzos y sets creativos.">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:title" content="La Paleta de Van Gogh">
+<meta property="og:description" content="Explora un vibrante catálogo de materiales de arte de alta calidad. Desde pinturas y pinceles hasta lienzos y sets creativos.">
+<meta property="og:image" content="https://raw.githubusercontent.com/LapaletaVG/catalogo/main/index.png">
+<meta property="og:url" content="https://lapaletavg.github.io/catalogo/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card (por si lo compartes en X/Twitter) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La Paleta de Van Gogh">
+<meta name="twitter:description" content="Explora un vibrante catálogo de materiales de arte de alta calidad. Desde pinturas y pinceles hasta lienzos y sets creativos.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/LapaletaVG/catalogo/main/index.png">
+
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #123f77;
+            --color-secondary: #ffdd00;
+            --color-accent: #37cae5;
+            --color-light: #FBF6E7;
+            --color-dark: #222222;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--color-light);
+            min-height: 100vh;
+            background: #0D162F; /* Fondo de respaldo */
+            position: relative;
+        }
+        
+        /* Contenedor del fondo para que el filtro no afecte otros elementos */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('fondo.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Esto crea el efecto de paralaje */
+            filter: brightness(0.7) contrast(1.2); /* Efecto para que se parezca a un cuadro */
+            z-index: -1;
+        }
+
+        @keyframes swirlEffect {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.2) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            background: rgba(18, 63, 119, 0.7); /* Color primario con opacidad */
+            padding: 0.5rem 0; /* Altura del encabezado reducida */
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Regla @font-face para cargar la fuente Rockybilly */
+        @font-face {
+            font-family: 'Rockybilly';
+            src: url('Rockybilly.woff2') format('woff2'),
+                 url('Rockybilly.woff') format('woff'),
+                 url('Rockybilly.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .logo {
+            font-size: clamp(1rem, 4vw, 1.5rem); /* Tamaño de la fuente ajustado */
+            color: var(--color-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            /* Aplicar la fuente personalizada al logo */
+            font-family: 'Rockybilly', sans-serif;
+            height: 60px; /* Altura del logo reducida */
+            width: auto;
+        }
+
+        .logo span {
+            font-size: 1.8rem; /* Tamaño de la fuente del emoji ajustado */
+            color: var(--color-secondary);
+        }
+
+        h1 {
+            text-align: center;
+            padding: 3rem 0;
+            font-size: 3rem;
+            color: var(--color-light);
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            /* Se ha ajustado la animación para que use los colores de tu paleta */
+            background: linear-gradient(90deg, var(--color-accent), var(--color-secondary), var(--color-light));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 0;
+            border-radius: 20px;
+            margin-bottom: 0; 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden; 
+        }
+        
+        .hero img {
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            border-radius: 20px;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem; 
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(15, 134, 182, 0.774); /* Nuevo color de la paleta */
+            border-radius: 12px;
+            backdrop-filter: blur(25px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-container label {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .filter-container select {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--color-light);
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .filter-container select option {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .product-card {
+            /* Ajustado para el efecto de vidrio esmerilado */
+            background: rgba(255, 255, 255, 0.15); 
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            /* Ajustado para un efecto de desenfoque más prominente */
+            backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .product-card:hover::before {
+            transform: rotate(45deg) scale(1.5);
+            opacity: 0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-secondary); /* Usa el nuevo color secundario */
+            margin-top: 1rem;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: var(--color-light); /* Usa el nuevo color claro */
+            margin: 0.5rem 0 1rem;
+            min-height: 40px;
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-accent); /* Usa el nuevo color de acento */
+        }
+
+        .original-price {
+            font-size: 1rem;
+            text-decoration: line-through;
+            color: var(--color-light); /* Usa el nuevo color claro */
+        }
+
+        .discount {
+            background: #FF4B4B;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: skew(-10deg);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            background: linear-gradient(45deg, var(--color-secondary), var(--color-light));
+            color: var(--color-dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-icon-container {
+            position: fixed;
+            top: 10rem; /* Ajustado para colocarlo debajo del encabezado */
+            right: 2rem;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+
+        .cart-icon {
+            background: var(--color-secondary);
+            color: var(--color-dark);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #FF4B4B;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 2px solid var(--color-light);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(18, 63, 119, 0.95); /* Nuevo color primario con opacidad */
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 550px;
+            max-height: 90vh;
+            overflow-y: auto;
+            z-index: 1200;
+            color: var(--color-light);
+            transition: transform 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .modal.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: var(--color-secondary);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--color-light);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #FF4B4B;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .item-info img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .item-name {
+            font-weight: bold;
+        }
+
+        .item-price {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .cart-total-container {
+            text-align: right;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .cart-checkout-btn, .newsletter-btn {
+            background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
+            color: white;
+        }
+        
+        .cart-checkout-btn:hover, .newsletter-btn:hover {
+            background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+        }
+
+        footer {
+            background: rgba(18, 63, 119, 0.7); /* Nuevo color primario con opacidad */
+            padding: 2.5rem 0;
+            text-align: center;
+            margin-top: 4rem;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .newsletter-input {
+            width: 300px;
+            padding: 0.8rem;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--color-light);
+            outline: none;
+            transition: box-shadow 0.3s;
+        }
+        
+        .newsletter-input:focus {
+            box-shadow: 0 0 0 3px var(--color-secondary);
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Estilos para el Toast */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .toast {
+            background: rgba(30, 144, 255, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-top: 10px;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+            to {
+                bottom: 20px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 20px;
+                opacity: 1;
+            }
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                padding: 0;
+                margin-bottom: 0.5rem;
+            }
+            .hero img {
+                height: auto;
+            }
+            .filter-container {
+                margin-top: 0.5rem;
+            }
+            .product-grid { gap: 1.5rem; }
+            .cart-icon-container { bottom: 1rem; right: 1rem; }
+            .cart-icon { width: 60px; height: 60px; font-size: 1.8rem; }
+            .modal { padding: 1.5rem; }
+            .modal-buttons { flex-direction: column-reverse; }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: auto;
+            }
+            .hero img {
+                height: auto;
+            }
+            .newsletter-form { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                La Paleta de Van Gogh
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <img src="hero.png" alt="Donde las ideas se transforman en arte">
+        </div>
+        
+        <!-- Contenedor del filtro de categorías -->
+        <div class="filter-container">
+            <label for="category-filter">Filtrar por categoría:</label>
+            <select id="category-filter">
+                <option value="todos">Mostrar todos</option>
+                <option value="pinturas">Pinturas</option>
+                <option value="dibujo">Dibujo</option>
+                <option value="modelado">Modelado</option>
+                <option value="grabado">Grabado</option>
+                <option value="pinceles">Pinceles</option>
+                <option value="lapices">Lápices</option>
+                <option value="papel">Papel</option>
+                <option value="complementario">Complementario</option>
+                <option value="decoupage">Decoupage</option>
+                <option value="herramientas">Herramientas</option>
+            </select>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+    </div>
+    
+    <div class="cart-icon-container" id="cart-icon-container">
+        <div class="cart-icon">🛒</div>
+        <div class="cart-badge" id="cart-count">0</div>
+    </div>
+
+    <!-- Carrito Modal -->
+    <div class="modal-overlay" id="cart-overlay">
+        <div class="modal" id="cart-modal">
+            <div class="modal-header">
+                <h2>Tu Carrito</h2>
+                <button class="modal-close" id="close-cart-btn">&times;</button>
+            </div>
+            <div id="cart-items"></div>
+            <div class="cart-total-container">
+                Total: <span id="cart-total">Q0.00</span>
+            </div>
+            <div class="modal-buttons">
+                <button class="button close-cart-btn" id="continue-shopping-btn">Seguir comprando</button>
+                <button class="button cart-checkout-btn" id="checkout-btn">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alerta Modal -->
+    <div class="modal-overlay" id="alert-overlay">
+        <div class="modal" id="alert-modal">
+            <div class="modal-header">
+                <h2>¡Atención!</h2>
+                <button class="modal-close" id="close-alert-btn">&times;</button>
+            </div>
+            <p id="alert-message"></p>
+            <div class="modal-buttons">
+                <button class="button" id="alert-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor del Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    
+
+    <script>
+        // Datos de productos con categorías
+        const productos = [
+            {
+                id: 1, nombre: "Set de gubias de madera", precio: 25.00, precioOriginal: 30.00, descripcion: "Un kit de 5 gubias de madera.",
+                imagen: "gubia.jpg",
+                categoria: "grabado"
+            },
+            {
+                id: 2, nombre: "Estecas de plastico", precio: 18.00, precioOriginal: 22.00, descripcion: "Set de 8 piezas",
+                imagen: "estecas.jpg",
+                categoria: "modelado"
+            },
+            {
+                id: 3, nombre: "Pinceles redondos", precio: 22.00, precioOriginal: null, descripcion: "Set de 5 pinceles.",
+                imagen: "pincel5.jpg",
+                categoria: "pinceles"
+            },
+            {
+                id: 4, nombre: "Pintura acrilica", precio: 12.00, precioOriginal: null, descripcion: "Colores surtidos 60 ml",
+                imagen: "acrilico60.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 5, nombre: "Pintura acrilica", precio: 25.00, precioOriginal: 33.00, descripcion: "Acrilico 60ml - Dorado perlado",
+                imagen: "doradoperlado.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 6, nombre: "Pintura acrilica", precio: 25.00, precioOriginal: null, descripcion: "Acrilico 60ml - Bronce",
+                imagen: "acrilicobronce.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 7, nombre: "Pintura acrilica", precio: 25.00, precioOriginal: 42.00, descripcion: "Acrilico 60ml - Oro medio",
+                imagen: "oromedio.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 8, nombre: "Pintura acrilica", precio: 37.00, precioOriginal: 42.00, descripcion: "Acrilico 60ml - Aluminio",
+                imagen: "aluminio.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 9, nombre: "Pintura acrilica", precio: 37.00, precioOriginal: 42.00, descripcion: "Acrilico 60ml - Plata",
+                imagen: "plata.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 10, nombre: "Pintura acrilica", precio: 25.00, precioOriginal: 33.00, descripcion: "Acrilico 60ml - Negro metalizado",
+                imagen: "negrometal.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 11, nombre: "Pintura acrilica", precio: 21.00, precioOriginal: 40.00, descripcion: "Acrilico 30ml - Oro rosa metalizado",
+                imagen: "ororosa.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 12, nombre: "Oleos Bozetto", precio: 95.00, precioOriginal: 114.00, descripcion: "Set de 12 colores - 15ml",
+                imagen: "oleoboz.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 13, nombre: "Aceite de linaza", precio: 18.00, precioOriginal: 20.00, descripcion: "Frasco de 60ml - Franco arte",
+                imagen: "linaza.jpg",
+                categoria: "complementario"
+            },
+            {
+                id: 14, nombre: "Retardante acrilico", precio: 22.00, precioOriginal: 22.80, descripcion: "Frasco de 60ml - Franco arte",
+                imagen: "retardante.jpg",
+                categoria: "complementario"
+            },
+            {
+                id: 15, nombre: "Pasta texturizadora 120ml", precio: 30.00, precioOriginal: null, descripcion: "Se utiliza para dar volumen, ideal para aplicar sobre ella, óleo, acrílico",
+                imagen: "texturizador.jpg",
+                categoria: "complementario"
+            },
+            {
+                id: 16, nombre: "Barniz spray para Oleo 300ml", precio: 100.00, precioOriginal: 115.00, descripcion: "Se emplea para proteger contra el polvo, rayos ultravioleta, humedad, fricción y envejecimiento las obras o trabajos realizados en oleo",
+                imagen: "barnizoleo.jpg",
+                categoria: "complementario"
+            },
+            {
+                id: 17, nombre: "Barniz spray No Oleo 300ml", precio: 100.00, precioOriginal: 115.00, descripcion: "Se emplea para proteger contra el polvo, rayos ultravioleta, humedad, fricción y envejecimiento las obras o trabajos realizados en acrílico, carboncillo, pastel, dibujos a tiza, lápiz, óleo pastel, vinilo, acuarela, gouache, balso, madera, metal, entre otros.",
+                imagen: "barniz.jpg",
+                categoria: "complementario"
+            },
+            {
+                id: 18, nombre: "Craquelador 60ml", precio: 13.50, precioOriginal: 14.00, descripcion: "Craquela pinturas a base de agua como vinilos, acrílicos, pinturas acrílicas, entre otros.",
+                imagen: "craquelador.jpg",
+                categoria: "complemetario"
+            },
+            {
+                id: 19, nombre: "Gel pegante 120ml", precio: 32.00, precioOriginal: 47.00, descripcion: "Pegante especial de secado lento, alta adherencia, no arruga, ideal para pegar servilletas o tela",
+                imagen: "gelpegante.jpg",
+                categoria: "decoupage"
+            },
+            {
+                id: 20, nombre: "Barniz 60ml", precio: 26.50, precioOriginal: 29.00, descripcion: "Acabado transparente brillante que da alta protección, para trabajos realizados en cualquier material crudo o pintado como metal, madera, MDF, cartón, piedra, vidrio entre otros. No utilizar sobre pinturas al óleo.",
+                imagen: "barniz60.jpg",
+                categoria: "complementario"
+            },
+         {
+                id: 21, nombre: "Marcador acrilico - colores surtidos", precio: 12.50, precioOriginal: 13.00, descripcion: "Su tinta a base de agua, cobertura intensa perfectos para madera, tela, papel, cerámica y más.",
+                imagen: "marcadoracrilico.jpg",
+                categoria: "pinturas"
+            },
+            {
+                id: 22, nombre: "Lapiz artistico", precio: 12.00, precioOriginal: null, descripcion: "Colores: sanguina, sepia, blanco.",
+                imagen: "lapizartistico.jpg",
+                categoria: "lapices"
+            },
+             {
+                id: 23, nombre: "Lapiz de dibujo - 10 unididades", precio: 20.00, precioOriginal: null, descripcion: "Fabricados en grafito, están diseñados para proporcionar un rendimiento superior en tánicas de dibujo, esbozos, bocetos, trabajos artísticos y diseño gráfico.",
+                imagen: "lapizdibujo.jpg",
+                categoria: "lapices"
+            },
+              {
+                id: 24, nombre: "Paleta plastica", precio: 10.00, precioOriginal: null, descripcion: "Paleta para mezclar o dosificar pinturas y complementos de arte y manualidades. Limpiar con agua.",
+                imagen: "paletaplastica.jpg",
+                categoria: "herramientas"
+            },
+             {
+                id: 25, nombre: "Pincel redondo - corto #8", precio: 12.00, precioOriginal: null, descripcion: "Estos pinceles son ideales para aplicar pintura de manera uniforme y suave en superficies, permitiendo una amplia gama de trazos, desde líneas delgadas hasta áreas más grandes. Su diseño redondeado les brinda versatilidad y precisión",
+                imagen: "pincelredondo8.png",
+                categoria: "pinceles"
+            },
+            {
+                id: 26, nombre: "Pincel lengua de gato - corto #8", precio: 12.00, precioOriginal: null, descripcion: "Estos pinceles exhiben una versatilidad que los convierte en herramientas de elección en diversas técnicas y aplicaciones dentro del ámbito de la pintura, la ilustración y las bellas artes. Los pinceles Lengua de Gato son particularmente idóneos para trabajos que demandan precisión en las líneas, contornos definidos, detalles minuciosos, el rellenado de áreas pequeñas y la ejecución de técnicas como el pincel seco",
+                imagen: "lenguadegato8.png",
+                categoria: "pinceles"
+            },
+            {
+                id: 27, nombre: "Pincel lengua de gato - corto #4", precio: 12.00, precioOriginal: null, descripcion: "Estos pinceles exhiben una versatilidad que los convierte en herramientas de elección en diversas técnicas y aplicaciones dentro del ámbito de la pintura, la ilustración y las bellas artes. Los pinceles Lengua de Gato son particularmente idóneos para trabajos que demandan precisión en las líneas, contornos definidos, detalles minuciosos, el rellenado de áreas pequeñas y la ejecución de técnicas como el pincel seco",
+                imagen: "lenguadegato4.png",
+                categoria: "pinceles"
+            },
+            {
+                id: 28, nombre: "Pincel lengua de gato - corto #12", precio: 15.00, precioOriginal: null, descripcion: "Estos pinceles exhiben una versatilidad que los convierte en herramientas de elección en diversas técnicas y aplicaciones dentro del ámbito de la pintura, la ilustración y las bellas artes. Los pinceles Lengua de Gato son particularmente idóneos para trabajos que demandan precisión en las líneas, contornos definidos, detalles minuciosos, el rellenado de áreas pequeñas y la ejecución de técnicas como el pincel seco",
+                imagen: "lenguadegato12.png",
+                categoria: "pinceles"
+            },
+            {
+                id: 29, nombre: "Lapices de carboncillo - MEDIO", precio: 5.50, precioOriginal: null, descripcion: "Diseñados para ofrecer un control excepcional y la capacidad de crear obras de arte expresivas y detalladas. Con una mina de carboncillo de alta calidad, estos lápices permiten trazos suaves y precisos",
+                imagen: "carboncillo1.png",
+                categoria: "lapices"
+            },
+             {
+                id: 30, nombre: "Lapices de carboncillo - SUAVE", precio: 5.50, precioOriginal: null, descripcion: "Diseñados para ofrecer un control excepcional y la capacidad de crear obras de arte expresivas y detalladas. Con una mina de carboncillo de alta calidad, estos lápices permiten trazos suaves y precisos",
+                imagen: "carboncillo2.png",
+                categoria: "lapices"
+            },
+             {
+                id: 31, nombre: "Borrador maleable", precio: 7.50, precioOriginal: null, descripcion: "Ideal para corregir y aclarar trazos de carboncillo, lápiz y obras de arte pastel, perfecto para artistas, ilustradores y principiantes que hacen uso de estas técnicas secas ya que puede adaptarse al tamaño y forma deseada",
+                imagen: "borrador1.jpg",
+                categoria: "dibujo"
+            },
+              {
+                id: 31, nombre: "Esfumino - 3 unidades", precio: 10.00, precioOriginal: null, descripcion: "Permiten mezclar gradualmente el material, eliminando los contrastes de los trazos y creando una apariencia más suave",
+                imagen: "esfumino.jpg",
+                categoria: "dibujo"
+            },
+        ];
+
+        // Elementos del DOM
+        const productGrid = document.getElementById('product-grid');
+        const cartCount = document.getElementById('cart-count');
+        const cartModal = document.getElementById('cart-modal');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalDisplay = document.getElementById('cart-total');
+        const alertModal = document.getElementById('alert-modal');
+        const alertOverlay = document.getElementById('alert-overlay');
+        const alertMessage = document.getElementById('alert-message');
+        const toastContainer = document.getElementById('toast-container');
+        const categoryFilter = document.getElementById('category-filter');
+
+        // Estado del carrito (usando localStorage para persistencia básica)
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        // Funciones de utilidad
+        function formatPrice(price) {
+            return `Q${price.toFixed(2)}`;
+        }
+
+        // Funciones de modales y toast
+        function toggleCartModal() {
+            cartModal.classList.toggle('active');
+            cartOverlay.classList.toggle('active');
+            if (cartModal.classList.contains('active')) {
+                renderCart();
+            }
+        }
+
+        function showAlert(message) {
+            alertMessage.textContent = message;
+            alertModal.classList.add('active');
+            alertOverlay.classList.add('active');
+        }
+
+        function closeAlert() {
+            alertModal.classList.remove('active');
+            alertOverlay.classList.remove('active');
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.textContent = message;
+            toastContainer.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toast.remove();
+                }, 500);
+            }, 3000);
+        }
+
+        // Lógica del carrito
+        function addItemToCart(id) {
+            const product = productos.find(p => p.id === id);
+            const itemInCart = carrito.find(item => item.id === id);
+
+            if (itemInCart) {
+                itemInCart.quantity++;
+            } else {
+                carrito.push({ ...product, quantity: 1 });
+            }
+            saveCart();
+            updateCartCount();
+            showToast(`"${product.nombre}" ha sido añadido al carrito.`);
+        }
+
+        function removeItemFromCart(id) {
+            carrito = carrito.filter(item => item.id !== id);
+            saveCart();
+            renderCart();
+            updateCartCount();
+        }
+
+        function saveCart() {
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+        }
+
+        function updateCartCount() {
+            const totalItems = carrito.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            if (carrito.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align: center; color: rgba(255, 255, 255, 0.7);">Tu carrito está vacío.</p>';
+            } else {
+                carrito.forEach(item => {
+                    const itemTotal = item.precio * item.quantity;
+                    total += itemTotal;
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <div class="item-info">
+                            <img src="${item.imagen}" alt="${item.nombre}">
+                            <div>
+                                <div class="item-name">${item.nombre} x${item.quantity}</div>
+                                <div class="item-price">${formatPrice(itemTotal)}</div>
+                            </div>
+                        </div>
+                        <button class="modal-close remove-from-cart-btn" data-id="${item.id}">&times;</button>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+                });
+            }
+            cartTotalDisplay.textContent = formatPrice(total);
+        }
+
+        function handleCheckout() {
+            if (carrito.length === 0) {
+                showAlert("Tu carrito está vacío, por favor añade productos.");
+                return;
+            }
+
+            let message = "¡Hola! Me gustaría hacer el siguiente pedido:%0A%0A";
+            let total = 0;
+            carrito.forEach(item => {
+                const itemTotal = item.precio * item.quantity;
+                total += itemTotal;
+                message += `- ${item.nombre} x${item.quantity} - ${formatPrice(itemTotal)}%0A`;
+            });
+
+            message += `%0A*Total: ${formatPrice(total)}*%0A%0AGracias.`;
+
+            window.open(`https://wa.me/50236918128?text=${message}`, '_blank');
+        }
+
+        function handleNewsletterSignup() {
+            const emailInput = document.getElementById('newsletter-email');
+            const email = emailInput.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                showAlert('Por favor, ingresa un correo electrónico válido.');
+                return;
+            }
+            
+            showAlert(`¡Gracias por suscribirte con ${email}! Te daremos la bienvenida muy pronto.`);
+            emailInput.value = '';
+        }
+
+        // Generar el catálogo de productos
+        function renderProducts(productsToRender = productos) {
+            productGrid.innerHTML = '';
+            if (productsToRender.length === 0) {
+                productGrid.innerHTML = '<p style="text-align: center; width: 100%; font-size: 1.2rem; color: rgba(255, 255, 255, 0.8);">No se encontraron productos en esta categoría.</p>';
+                return;
+            }
+            productsToRender.forEach(product => {
+                const card = document.createElement('div');
+                card.classList.add('product-card');
+                
+                let priceHtml = `<span class="current-price">${formatPrice(product.precio)}</span>`;
+                if (product.precioOriginal) {
+                    const discount = Math.round(((product.precioOriginal - product.precio) / product.precioOriginal) * 100);
+                    priceHtml = `
+                        <span class="current-price">${formatPrice(product.precio)}</span>
+                        <span class="original-price">${formatPrice(product.precioOriginal)}</span>
+                        <span class="discount">-${discount}%</span>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <img src="${product.imagen}" alt="${product.nombre}" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <div class="product-title">${product.nombre}</div>
+                        <p class="product-description">${product.descripcion}</p>
+                        <div class="price">${priceHtml}</div>
+                    </div>
+                    <button class="button add-to-cart-btn" data-id="${product.id}">Añadir al carrito</button>
+                `;
+                productGrid.appendChild(card);
+            });
+        }
+        
+        // Función para filtrar productos
+        function filterProducts() {
+            const selectedCategory = categoryFilter.value;
+            if (selectedCategory === 'todos') {
+                renderProducts();
+            } else {
+                const filtered = productos.filter(p => p.categoria === selectedCategory);
+                renderProducts(filtered);
+            }
+        }
+
+        // Event Listeners para manejar interacciones
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartCount();
+
+            // Lógica de Modales
+            document.getElementById('cart-icon-container').addEventListener('click', toggleCartModal);
+            document.getElementById('close-cart-btn').addEventListener('click', toggleCartModal);
+            document.getElementById('continue-shopping-btn').addEventListener('click', toggleCartModal);
+            document.getElementById('cart-overlay').addEventListener('click', (e) => {
+                if (e.target.id === 'cart-overlay') {
+                    toggleCartModal();
+                }
+            });
+            document.getElementById('close-alert-btn').addEventListener('click', closeAlert);
+            document.getElementById('alert-ok-btn').addEventListener('click', closeAlert);
+            document.getElementById('alert-overlay').addEventListener('click', (e) => {
+                if (e.target.id === 'alert-overlay') {
+                    closeAlert();
+                }
+            });
+
+            // Nuevo Event Listener para el filtro
+            categoryFilter.addEventListener('change', filterProducts);
+
+            // Lógica del carrito y botones
+            productGrid.addEventListener('click', (e) => {
+                if (e.target.classList.contains('add-to-cart-btn')) {
+                    const id = parseInt(e.target.dataset.id);
+                    addItemToCart(id);
+                }
+            });
+            cartItemsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('remove-from-cart-btn')) {
+                    const id = parseInt(e.target.dataset.id);
+                    removeItemFromCart(id);
+                }
+            });
+            document.getElementById('checkout-btn').addEventListener('click', handleCheckout);
+            document.getElementById('newsletter-btn').addEventListener('click', handleNewsletterSignup);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
