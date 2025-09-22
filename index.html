@@ -43,7 +43,7 @@
             background: #0D162F; /* Fondo de respaldo */
             position: relative;
             padding-top: 90px;
-            padding-bottom: 60px;
+            padding-bottom: 80px;
         }
         
         /* Contenedor del fondo para que el filtro no afecte otros elementos */
@@ -488,7 +488,7 @@
 
         footer {
             background: rgba(18, 63, 119, 0.7); /* Nuevo color primario con opacidad */
-            padding: 2.5rem 0;
+            padding: 0.5rem 1.5rem;
             text-align: center;
             margin-top: 4rem;
             border-top-left-radius: 20px;
@@ -609,26 +609,23 @@
      /* --- NUEVO CSS (agrégalo a tu etiqueta <style>) --- */
 
 /* Estilo principal del footer */
-footer {
-    background: rgba(18, 63, 119, 0.7); /* Usa tu color primario */
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    margin-top: 4rem;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-}
+
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     color: var(--color-light);
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos */
+    align-items: center;            /* Centra verticalmente */
+    flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
+    gap: 1rem;       /* Espacio entre elementos si se apilan */
+ 
 }
 
 .footer-address {
-    margin: 0 0 1.5rem 0;
-    font-size: 1rem;
+    margin: 0; /* ✨ Quitamos el margen inferior que tenía antes */
+    font-size: 0.9rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -637,10 +634,10 @@ footer {
 
 /* Contenedor de iconos */
 .social-icons {
+    margin-bottom: 0; /* ✨ Quitamos el margen inferior que tenía antes */
     display: flex;
     justify-content: center;
-    gap: 1.5rem; /* Espacio entre iconos */
-    margin-bottom: 1.5rem;
+    gap: 1.5rem;
 }
 
 /* Estilo para cada icono */
@@ -1429,6 +1426,7 @@ footer {
 </footer>
 </body>
 </html>
+
 
 
 
