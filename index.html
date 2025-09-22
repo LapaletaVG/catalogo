@@ -662,6 +662,25 @@
     font-size: 0.8rem;
     opacity: 0.8;
 }
+
+
+
+     /* --- AÑADE ESTO AL FINAL DE TU CSS PARA ARREGLAR EL FOOTER EN MÓVILES --- */
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    gap: 0.5rem;            /* Reduce el espacio entre ellos cuando están apilados */
+  }
+
+  .social-icons {
+    gap: 1.2rem; /* Opcional: reduce un poco el espacio entre iconos en móviles */
+  }
+  
+  .footer-address, .footer-copyright {
+      font-size: 0.75rem; /* Opcional: hace el texto un poco más pequeño en móviles */
+  }
+}
     </style>
 </head>
 <body>
@@ -1429,6 +1448,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
