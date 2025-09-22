@@ -1,30 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
- <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Paleta de Van Gogh</title>
-<meta name="description" content="Explora un vibrante catálogo de materiales de arte de alta calidad. Desde pinturas y pinceles hasta lienzos y sets creativos.">
 
-<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
-<meta property="og:title" content="La Paleta de Van Gogh">
-<meta property="og:description" content="Explora un vibrante catálogo de materiales de arte de alta calidad. Desde pinturas y pinceles hasta lienzos y sets creativos.">
-<meta property="og:image" content="https://raw.githubusercontent.com/LapaletaVG/catalogo/main/index.webp">
-<meta property="og:url" content="https://lapaletavg.github.io/catalogo/">
-<meta property="og:type" content="website">
+ 
+ <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Título y Descripción Optimizados -->
+    <title>Materiales de Arte y Eventos Creativos en Chiquimula | La Paleta de Van Gogh</title>
+    <meta name="description" content="Descubre materiales de arte en Chiquimula. Ofrecemos talleres y eventos creativos para fiestas, cumpleaños, baby showers y actividades empresariales. ¡El arte para todos!">
 
-<!-- Twitter Card (por si lo compartes en X/Twitter) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="La Paleta de Van Gogh">
-<meta name="twitter:description" content="Explora un vibrante catálogo de materiales de arte de alta calidad. Desde pinturas y pinceles hasta lienzos y sets creativos.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/LapaletaVG/catalogo/main/index.webp">
+    <!-- SEO: Open Graph (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:title" content="La Paleta de Van Gogh | Arte y Eventos Creativos">
+    <meta property="og:description" content="Organizamos talleres de arte para cumpleaños, fiestas y eventos empresariales. Además, encuentra el mejor surtido de materiales de arte en Chiquimula.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/LapaletaVG/catalogo/main/index.webp">
+    <meta property="og:url" content="https://lapaletavg.github.io/catalogo/">
+    <meta property="og:type" content="website">
 
-<!-- Google Fonts: Inter -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- SEO: Twitter Card (X/Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="La Paleta de Van Gogh | Arte y Eventos Creativos">
+    <meta name="twitter:description" content="Organizamos talleres de arte para cumpleaños, fiestas y eventos empresariales. Además, encuentra el mejor surtido de materiales de arte en Chiquimula.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/LapaletaVG/catalogo/main/index.webp">
 
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO: DATOS ESTRUCTURADOS (SCHEMA.ORG) PARA GOOGLE -->
+    <!-- Este código es invisible pero le da a Google un resumen claro de tu negocio y servicios. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ArtGallery",
+      "name": "La Paleta de Van Gogh",
+      "image": "https://raw.githubusercontent.com/LapaletaVG/catalogo/main/index.webp",
+      "@id": "https://lapaletavg.github.io/catalogo/",
+      "url": "https://lapaletavg.github.io/catalogo/",
+      "telephone": "+50236918128",
+      "description": "Tienda de materiales de arte y estudio creativo que ofrece talleres y eventos para todas las edades en Chiquimula.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Colonia el Caminero",
+        "addressLocality": "Chiquimula",
+        "addressRegion": "Chiquimula",
+        "addressCountry": "GT"
+      },
+      "priceRange": "Q - QQ",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Talleres de Arte para Fiestas de Cumpleaños",
+            "description": "Celebra un cumpleaños único y creativo con un taller de pintura para niños o adultos. Incluye materiales y caballetes."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Eventos Artísticos para Empresas (Team Building)",
+            "description": "Actividades de 'team building' y relajación para equipos corporativos a través del arte y la pintura."
+          }
+        },
+        {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Talleres para Despedidas de Soltera y Baby Showers",
+              "description": "Una actividad original y memorable para celebrar despedidas de soltera o baby showers. ¡Cada invitada crea su propia obra de arte!"
+            }
+        }
+      ]
+    }
+    </script>
+    
     <style>
         :root {
             --color-primary: #123f77;
@@ -33,20 +86,16 @@
             --color-light: #FBF6E7;
             --color-dark: #222222;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 0;
             color: var(--color-light);
             min-height: 100vh;
-            background: #0D162F; /* Fondo de respaldo */
+            background: #0D162F;
             position: relative;
             padding-top: 90px;
-            padding-bottom: 60px;
+            padding-bottom: 80px;
         }
-        
-        /* Contenedor del fondo para que el filtro no afecte otros elementos */
         body::before {
             content: '';
             position: fixed;
@@ -57,25 +106,18 @@
             background-image: url('fondo.webp');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Esto crea el efecto de paralaje */
-            filter: brightness(0.7) contrast(1.2); /* Efecto para que se parezca a un cuadro */
+            background-attachment: fixed;
+            filter: brightness(0.7) contrast(1.2);
             z-index: -1;
         }
-
-        @keyframes swirlEffect {
-            0% { transform: scale(1) rotate(0deg); }
-            100% { transform: scale(1.2) rotate(360deg); }
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
-
         header {
-            background: rgba(18, 63, 119, 0.7); /* Color primario con opacidad */
-            padding: 0.5rem 0; /* Altura del encabezado reducida */
+            background: rgba(18, 63, 119, 0.7);
+            padding: 0.5rem 0;
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -85,14 +127,11 @@
             top: 0;
             width: 100%;
         }
-
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
-        /* Regla @font-face para cargar la fuente Rockybilly */
         @font-face {
             font-family: 'Rockybilly';
             src: url('Rockybilly.woff2') format('woff2'),
@@ -101,83 +140,48 @@
             font-weight: normal;
             font-style: normal;
         }
-        
         .logo {
-            font-size: clamp(1rem, 4vw, 1.5rem); /* Tamaño de la fuente ajustado */
+            font-size: clamp(1rem, 4vw, 1.5rem);
             color: var(--color-light);
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            /* Aplicar la fuente personalizada al logo */
             font-family: 'Rockybilly', sans-serif;
-            height: 60px; /* Altura del logo reducida */
+            height: 60px;
             width: auto;
         }
-
-        .logo span {
-            font-size: 1.8rem; /* Tamaño de la fuente del emoji ajustado */
-            color: var(--color-secondary);
-        }
-
-        h1 {
-            text-align: center;
-            padding: 3rem 0;
-            font-size: 3rem;
-            color: var(--color-light);
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
-            margin: 0;
-            /* Se ha ajustado la animación para que use los colores de tu paleta */
-            background: linear-gradient(90deg, var(--color-accent), var(--color-secondary), var(--color-light));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 3s infinite linear;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-        
         .hero {
             text-align: center;
-            padding: 0;
             border-radius: 20px;
-            margin-bottom: 0; 
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            overflow: hidden; 
+            overflow: hidden;
+            margin-bottom: 2rem;
         }
-        
         .hero img {
-            width: 100%; 
-            height: auto; 
-            display: block; 
-            border-radius: 20px;
+            width: 100%;
+            height: auto;
+            display: block;
         }
-
         .filter-container {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 1rem;
-            margin-top: 1rem; 
             margin-bottom: 2rem;
             padding: 1rem;
-            background: rgba(15, 134, 182, 0.774); /* Nuevo color de la paleta */
+            background: rgba(15, 134, 182, 0.774);
             border-radius: 12px;
             backdrop-filter: blur(25px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: sticky;
-            top: 90px;       
+            top: 80px;
             z-index: 999;
         }
-
         .filter-container label {
             font-size: 1.1rem;
             font-weight: bold;
         }
-
         .filter-container select {
             padding: 0.5rem 1rem;
             border-radius: 8px;
@@ -187,106 +191,66 @@
             cursor: pointer;
             outline: none;
         }
-        
         .filter-container select option {
             background-color: var(--color-primary);
             color: var(--color-light);
         }
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
             padding: 2rem 0;
         }
-
         .product-card {
-            /* Ajustado para el efecto de vidrio esmerilado */
-            background: rgba(255, 255, 255, 0.15); 
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 20px;
             padding: 1.5rem;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            /* Ajustado para un efecto de desenfoque más prominente */
-            backdrop-filter: blur(15px); 
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.05);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-        }
-
-        .product-card:hover::before {
-            transform: rotate(45deg) scale(1.5);
-            opacity: 0;
-        }
-        
         .product-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
-
         .product-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 16px;
-            transition: transform 0.3s ease;
         }
-
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            flex-grow: 1;
-        }
-
+        .product-info { flex-grow: 1; }
         .product-title {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--color-secondary); /* Usa el nuevo color secundario */
+            color: var(--color-secondary);
             margin-top: 1rem;
         }
-
         .product-description {
             font-size: 0.9rem;
-            color: var(--color-light); /* Usa el nuevo color claro */
             margin: 0.5rem 0 1rem;
             min-height: 40px;
         }
-
         .price {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1rem;
         }
-
         .current-price {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--color-accent); /* Usa el nuevo color de acento */
+            color: var(--color-accent);
         }
-
         .original-price {
             font-size: 1rem;
             text-decoration: line-through;
-            color: var(--color-light); /* Usa el nuevo color claro */
         }
-
         .discount {
             background: #FF4B4B;
             color: white;
@@ -294,10 +258,7 @@
             border-radius: 8px;
             font-size: 0.8rem;
             font-weight: bold;
-            transform: skew(-10deg);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-
         .button {
             background: linear-gradient(45deg, var(--color-secondary), var(--color-light));
             color: var(--color-dark);
@@ -311,20 +272,16 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-
         .button:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
-
         .cart-icon-container {
             position: fixed;
-            top: 10rem; /* Ajustado para colocarlo debajo del encabezado */
+            top: 10rem;
             right: 2rem;
             z-index: 1000;
-            animation: bounce 2s infinite;
         }
-
         .cart-icon {
             background: var(--color-secondary);
             color: var(--color-dark);
@@ -337,19 +294,7 @@
             font-size: 2rem;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
             cursor: pointer;
-            transition: transform 0.3s ease;
         }
-
-        .cart-icon:hover {
-            transform: scale(1.1);
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-7px); }
-        }
-
         .cart-badge {
             position: absolute;
             top: 0;
@@ -366,7 +311,6 @@
             font-weight: bold;
             border: 2px solid var(--color-light);
         }
-
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -380,18 +324,16 @@
             visibility: hidden;
             transition: opacity 0.4s ease, visibility 0.4s ease;
         }
-
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
         }
-
         .modal {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0.8);
-            background: rgba(18, 63, 119, 0.95); /* Nuevo color primario con opacidad */
+            background: rgba(18, 63, 119, 0.95);
             padding: 2.5rem;
             border-radius: 25px;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
@@ -400,41 +342,24 @@
             max-height: 90vh;
             overflow-y: auto;
             z-index: 1200;
-            color: var(--color-light);
             transition: transform 0.4s ease;
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-
-        .modal.active {
-            transform: translate(-50%, -50%) scale(1);
-        }
-        
+        .modal.active { transform: translate(-50%, -50%) scale(1); }
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1.5rem;
         }
-
-        .modal-header h2 {
-            margin: 0;
-            color: var(--color-secondary);
-        }
-        
+        .modal-header h2 { margin: 0; color: var(--color-secondary); }
         .modal-close {
             background: none;
             border: none;
             color: var(--color-light);
             font-size: 2rem;
             cursor: pointer;
-            transition: color 0.3s;
         }
-
-        .modal-close:hover {
-            color: #FF4B4B;
-        }
-
         .cart-item {
             display: flex;
             justify-content: space-between;
@@ -442,29 +367,19 @@
             padding: 1rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
         .item-info {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
-
         .item-info img {
             width: 60px;
             height: 60px;
             object-fit: cover;
             border-radius: 8px;
         }
-
-        .item-name {
-            font-weight: bold;
-        }
-
-        .item-price {
-            color: var(--color-accent);
-            font-weight: 600;
-        }
-
+        .item-name { font-weight: bold; }
+        .item-price { color: var(--color-accent); font-weight: 600; }
         .cart-total-container {
             text-align: right;
             margin-top: 2rem;
@@ -472,218 +387,73 @@
             font-weight: bold;
             color: var(--color-secondary);
         }
-
         .modal-buttons {
             display: flex;
             justify-content: flex-end;
             gap: 1rem;
             margin-top: 1.5rem;
         }
-
-        .cart-checkout-btn, .newsletter-btn {
+        .cart-checkout-btn {
             background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
             color: white;
         }
-        
-        .cart-checkout-btn:hover, .newsletter-btn:hover {
-            background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
-        }
-
         footer {
-            background: rgba(18, 63, 119, 0.7); /* Nuevo color primario con opacidad */
-            padding: 0.2rem 1.5rem;
-            text-align: center;
-            margin-top: 4rem;
+            background: rgba(18, 63, 119, 0.7);
+            padding: 0.5rem 1.5rem;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             position: fixed;
             bottom: 0;
-            width: 100%; 
+            width: 100%;
             z-index: 1000;
         }
-        
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .newsletter-input {
-            width: 300px;
-            padding: 0.8rem;
-            border-radius: 10px;
-            border: none;
-            background: rgba(255, 255, 255, 0.15);
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             color: var(--color-light);
-            outline: none;
-            transition: box-shadow 0.3s;
-        }
-        
-        .newsletter-input:focus {
-            box-shadow: 0 0 0 3px var(--color-secondary);
-        }
-        
-        .newsletter-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Estilos para el Toast */
-        .toast-container {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1500;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
-
-        .toast {
-            background: rgba(30, 144, 255, 0.9);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            margin-top: 10px;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            visibility: hidden;
-            opacity: 0;
+        .footer-address, .social-icons, .footer-copyright { margin: 0; }
+        .footer-address {
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-
-        .toast.show {
-            visibility: visible;
-            opacity: 1;
+        .social-icons { display: flex; gap: 1.5rem; }
+        .social-icons a {
+            color: var(--color-light);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
-
-        @keyframes fadein {
-            from {
-                bottom: 0;
-                opacity: 0;
-            }
-            to {
-                bottom: 20px;
-                opacity: 1;
-            }
+        .social-icons a:hover {
+            color: var(--color-secondary);
+            transform: scale(1.2);
         }
-
-        @keyframes fadeout {
-            from {
-                bottom: 20px;
-                opacity: 1;
-            }
-            to {
-                bottom: 0;
-                opacity: 0;
-            }
-        }
+        .footer-copyright { font-size: 0.8rem; opacity: 0.8; }
 
         @media (max-width: 768px) {
-            .hero {
-                height: auto;
-                padding: 0;
-                margin-bottom: 0.5rem;
-            }
-            .hero img {
-                height: auto;
-            }
-            .filter-container {
-                margin-top: 0.5rem;
-            }
-            .product-grid { gap: 1.5rem; }
-            .cart-icon-container { bottom: 1rem; right: 1rem; }
-            .cart-icon { width: 60px; height: 60px; font-size: 1.8rem; }
-            .modal { padding: 1.5rem; }
+            .cart-icon-container { bottom: 6rem; right: 1rem; }
             .modal-buttons { flex-direction: column-reverse; }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                height: auto;
+            .footer-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0.5rem 0;
             }
-            .hero img {
-                height: auto;
-            }
-            .newsletter-form { flex-direction: column; align-items: center; }
+            body { padding-bottom: 120px; }
         }
-     /* --- NUEVO CSS (agrégalo a tu etiqueta <style>) --- */
-
-/* Estilo principal del footer */
-
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    color: var(--color-light);
-    display: flex;
-    justify-content: center; /* Distribuye los elementos */
-    align-items: center;            /* Centra verticalmente */
-    flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
-    gap: 1rem;       /* Espacio entre elementos si se apilan */
- 
-}
-
-.footer-address {
-    margin: 0; /* ✨ Quitamos el margen inferior que tenía antes */
-    font-size: 0.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-/* Contenedor de iconos */
-.social-icons {
-    margin-bottom: 0; /* ✨ Quitamos el margen inferior que tenía antes */
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-/* Estilo para cada icono */
-.social-icons a {
-    color: var(--color-light); /* Color de los iconos */
-    font-size: 1.5rem; /* Tamaño de los iconos */
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* Efecto al pasar el mouse sobre el icono */
-.social-icons a:hover {
-    color: var(--color-secondary); /* Color amarillo al pasar el mouse */
-    transform: scale(1.2); /* Aumenta el tamaño ligeramente */
-}
-
-.footer-copyright {
-    margin: 0;
-    font-size: 0.8rem;
-    opacity: 0.8;
-}
-
-
-
-     /* --- AÑADE ESTO AL FINAL DE TU CSS PARA ARREGLAR EL FOOTER EN MÓVILES --- */
-
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column; /* Apila los elementos verticalmente */
-    gap: 0.5rem;            /* Reduce el espacio entre ellos cuando están apilados */
-  }
-
-  .social-icons {
-    gap: 1.2rem; /* Opcional: reduce un poco el espacio entre iconos en móviles */
-  }
-  
-  .footer-address, .footer-copyright {
-      font-size: 0.75rem; /* Opcional: hace el texto un poco más pequeño en móviles */
-  }
-}
     </style>
 </head>
-<body>
+ 
+ 
+ 
+ <body>
 
     <header>
         <div class="container header-content">
@@ -1448,6 +1218,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
