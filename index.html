@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Paleta de Van Gogh</title>
@@ -596,6 +597,62 @@
             }
             .newsletter-form { flex-direction: column; align-items: center; }
         }
+     /* --- NUEVO CSS (agrégalo a tu etiqueta <style>) --- */
+
+/* Estilo principal del footer */
+footer {
+    background: rgba(18, 63, 119, 0.7); /* Usa tu color primario */
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--color-light);
+}
+
+.footer-address {
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Contenedor de iconos */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Espacio entre iconos */
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para cada icono */
+.social-icons a {
+    color: var(--color-light); /* Color de los iconos */
+    font-size: 1.8rem; /* Tamaño de los iconos */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre el icono */
+.social-icons a:hover {
+    color: var(--color-secondary); /* Color amarillo al pasar el mouse */
+    transform: scale(1.2); /* Aumenta el tamaño ligeramente */
+}
+
+.footer-copyright {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
     </style>
 </head>
 <body>
@@ -1247,19 +1304,7 @@
             window.open(`https://wa.me/50236918128?text=${message}`, '_blank');
         }
 
-        function handleNewsletterSignup() {
-            const emailInput = document.getElementById('newsletter-email');
-            const email = emailInput.value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!emailRegex.test(email)) {
-                showAlert('Por favor, ingresa un correo electrónico válido.');
-                return;
-            }
-            
-            showAlert(`¡Gracias por suscribirte con ${email}! Te daremos la bienvenida muy pronto.`);
-            emailInput.value = '';
-        }
+
 
         // Generar el catálogo de productos
         function renderProducts(productsToRender = productos) {
@@ -1345,11 +1390,37 @@
                 }
             });
             document.getElementById('checkout-btn').addEventListener('click', handleCheckout);
-            document.getElementById('newsletter-btn').addEventListener('click', handleNewsletterSignup);
+    
         });
     </script>
+
+ <footer>
+    <div class="footer-content">
+        <p class="footer-address">
+            <i class="fas fa-map-marker-alt"></i> Colonia el Caminero, Chiquimula
+        </p>
+        <div class="social-icons">
+            <a href="https://wa.me/50236918128" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61579251457534" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/lapaletade_vangogh/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@lapaletadevangogh" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+        <p class="footer-copyright">
+            © 2025 La Paleta de Van Gogh. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
 </body>
 </html>
+
 
 
 
